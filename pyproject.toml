@@ -3,8 +3,8 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "RocketGate"
-version = "3.6"
+name = "rg_brad_test"
+version = "3.9"
 authors = [
   {name="RocketGate"},
 ]
