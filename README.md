@@ -20,3 +20,68 @@ From the root of the project, using your installed Python Interpreter, run the f
 ```shell
 python3 -m unittest discover ./tests -p '*.py'
 ```
+
+## Install RocketGate SDK
+```shell
+pip install RocketGate
+```
+
+## Run examples
+
+Clone this repository and run examples from `./examples` folder 
+with `python3 ./examples/AuthOnly.py`
+
+```bash
+cd ~
+git clone https://github.com/rocketgate/rocketgate-python-sdk
+cd ~/rocketgate-python-sdk
+python3 ./examples/AuthOnly.py
+```
+
+
+Expect to see output like:
+
+```bash
+Auth Only succeeded
+GUID:  100019354857297
+Response Code:  0
+Reason Code:  0
+AuthNo:  942499
+AVS:  None
+CVV2:  None
+Card Hash:  8Yz0jmvTGdDaZV9g58L+9mJ+0jw2fodvgktC/jS8GSs=
+Card Region:  1,2
+Card Description:  CLASSIC
+Account:  70
+Scrub:  NEGDB=0,PROFILE=0,ACTIVITY=1
+```
+
+## Using your local github clone for testing 
+If you want to test the modifications of your local version
+set `PYTHONPATH` env variable with the path to your 
+local repository and you can run examples from `./examples` folder.
+
+```bash
+cd ~
+git clone https://github.com/rocketgate/rocketgate-python-sdk
+cd ~/rocketgate-python-sdk
+export PYTHONPATH=~/rocketgate-python-sdk
+python3 ./examples/AuthOnly.py
+```
+
+Expect to see output like:
+
+```bash
+Auth Only succeeded
+GUID:  10001935007BB5F
+Response Code:  0
+Reason Code:  0
+AuthNo:  400966
+AVS:  None
+CVV2:  None
+Card Hash:  8Yz0jmvTGdDaZV9g58L+9mJ+0jw2fodvgktC/jS8GSs=
+Card Region:  1,2
+Card Description:  CLASSIC
+Account:  70
+Scrub:  NEGDB=0,PROFILE=0,ACTIVITY=1
+```
