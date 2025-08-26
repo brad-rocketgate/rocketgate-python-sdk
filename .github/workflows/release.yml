@@ -56,7 +56,7 @@ jobs:
       uses: softprops/action-gh-release@v1
       with:
         body: ${{ github.event.workflow_run.head_commit.message }}
-        files: dist/rocketgate-${{ github.event.release.tag_name }}.whl
+        files: dist/rg_brad_test-${{ github.event.release.tag_name }}.whl
 
     - name: Publish
       uses: pypa/gh-action-pypi-publish@release/v1
