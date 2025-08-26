@@ -45,9 +45,6 @@ jobs:
       id-token: write
 
     steps:
-    - name: Environment
-      run: echo "RELEASE_VERSION=$(git describe --tags)" > $GITHUB_ENV
-
     - name: Download wheel artifact
       uses: actions/download-artifact@v4
       with:
@@ -58,7 +55,7 @@ jobs:
       uses: softprops/action-gh-release@v1
       with:
         body: ${{ github.event.workflow_run.head_commit.message }}
-        files: dist/rocketgate-${{ env.RELEASE_VERSION }}.whl
+        files: dist/rocketgate-${{ github.event.release.tag_name }}.whl
 
     - name: Publish
       uses: pypa/gh-action-pypi-publish@release/v1
