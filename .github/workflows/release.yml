@@ -40,7 +40,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: pypi
-      url: https://pypi.org/p/rg_brad_test
+      url: https://test.pypi.org/p/rg_brad_test
     permissions:
       contents: write
       id-token: write
@@ -56,7 +56,7 @@ jobs:
       uses: softprops/action-gh-release@v1
       with:
         body: ${{ github.event.workflow_run.head_commit.message }}
-        files: dist/rg_brad_test-${{ github.ref_name }}.whl
+        files: dist/rg_brad_test-${{ github.ref_name }}-py3-none-any.whl
 
     - name: Publish
       uses: pypa/gh-action-pypi-publish@release/v1
